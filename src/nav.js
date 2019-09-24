@@ -15,9 +15,10 @@ const Nav = () => {
   return (
     <nav style={navStyle} >
       <h1><Link to={'/'} > TITLE </Link> </h1>
-      <h4><Link to={'/about'}>About</Link></h4>
-      <h4><Link to={'/comics'}>Comics</Link></h4>
-      <h4><Link to={'/blog'}>Blog</Link></h4>
+      <h4><Link to={'/archive'}>About</Link></h4>
+      <h4><Link to={'/about'}>Comics</Link></h4>
+      <h4><Link to={'/twitter'}>Blog</Link></h4>
+      <h4><Link to={'/feed'}>RSS</Link></h4>
     </nav>
   )
 }
