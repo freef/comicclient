@@ -10,6 +10,7 @@ const Nav = () => {
         <h4><Link className='main-nav-item' to={'/about'}>About</Link></h4>
         <h4><Link className='main-nav-item' to={'/comics'}>Archive</Link></h4>
         <h4><Link className='main-nav-item' to={'/blog'}>Blog</Link></h4>
+        <h4><a className='main-nav-item' href='mailto:matt@flopsyandbupp.com' target='_blank' rel='noopener noreferrer'>Contact</a></h4>
         <h4><Link className='main-nav-item' to={'/feed'}>RSS</Link></h4>
       </div>
     </nav>

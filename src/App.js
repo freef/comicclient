@@ -12,6 +12,8 @@ import Rss from './rss.js'
 import HireMe from './HireMe.js'
 import Blog from './Blog.js'
 import SideBar from './SideBar.js'
+import Footer from './Footer.js'
+import PrivacyPolicy from './PrivacyPolicy.js'
 
 import Alert from 'react-bootstrap/Alert'
 import './index.scss'
@@ -58,6 +60,7 @@ class App extends Component {
             <Route exact path='/comics/:id' component={Comic} />
             <Route exact path='/feed' component={Rss} />
             <Route exact path='/comics' component={Comic} />
+            <Route exact path='/privacypolicy' component={PrivacyPolicy} />
             <Route path='/' component={HireMe} />
             <section className='text-content'>
               <Route exact path='/' component={Blog} />
@@ -65,6 +68,9 @@ class App extends Component {
               <Route exact path='/blog/:id' component={Blog} />
               <Route exact path='/blog/' component={Blog} />
               <Route path='/blog' component={SideBar} />
+            </section>
+            <section>
+              <Route path='/' component={Footer} />
             </section>
           </main>
         </React.Fragment>

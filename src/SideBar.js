@@ -6,6 +6,9 @@ const SideBar = () => {
   return (
     <aside className='side-bar'>
       <div>
+        <a href='#' target='_blank'><h2 className='side-bar-title' >Patreon</h2></a>
+      </div>
+      <div>
         <h3 className='side-bar-title'>Stuff to Read:</h3>
         <ul>
           <li><a className='side-bar-link' href='#' target='_blank'>Achewood</a></li>

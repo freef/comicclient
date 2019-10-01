@@ -1,5 +1,14 @@
 body {
   background-color: #464646;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.blue-link {
+  color: #4094C1
+}
+.blue-link:hover{
+  color: #F386A0;
+  text-decoration: none;
 }
 
 .blog {
@@ -23,11 +32,22 @@ body {
   border: .1rem solid #F386A0;
 }
 
+.blog-post-header {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1rem;
+  align-items: baseline;
+}
+
 .blog-post-title{
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: bold;
   margin: 0 1rem .5rem 1rem
 }
 
 .blog-title {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: bold;
   margin: 0;
   background-color: #F386A0;
   color: #FFF;
@@ -83,12 +103,16 @@ body {
 
 .comic-title {
   color: #4094C1;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: bold;
 }
 
 .comic-title-link:hover {
   color: #F386A0;
   text-decoration: none;
   cursor: pointer;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: bold;
 }
 
 .comic-title-bar {
@@ -107,6 +131,32 @@ body {
 .flex-container {
   display: flex;
   align-items: row;
+}
+
+.footer {
+  font-size: .75rem;
+  color: #4094C1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  line-height: normal;
+}
+.footer hr{
+  border: 1px solid #4094C1;
+  width: 80%;
+  // margin-bottom: 2rem;
+}
+.footer-content{
+  display:flex;
+  align-items:center;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-bottom:2rem;
+}
+.footer-content p {
+  margin: .1rem;
 }
 
 .hire-me-link {
@@ -133,6 +183,8 @@ body {
 }
 
 .main-nav {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: bold;
   // align-items: center;
   display: flex;
   flex-direction: row;
@@ -167,7 +219,19 @@ body {
   }
 }
 
+.privacy {
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  border-radius: .25rem;
+}
+.privacy p {
+  margin-left: 1rem;
+}
+
 .side-bar {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: bold;
   width: 24%;
   background-color: #FFF;
   display: flex;

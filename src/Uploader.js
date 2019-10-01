@@ -10,6 +10,11 @@ class Uploader extends Component {
         title: null,
         pubdate: null
       },
+      blog: {
+        title: null,
+        pubdate: null,
+        body: null
+      },
       file: null,
       created: false
     }
@@ -22,8 +27,12 @@ class Uploader extends Component {
 
   handleChange = (event) => {
     event.preventDefault()
-    console.log(event.target.name)
     this.setState({ data: { ...this.state.data, [event.target.name]: event.target.value } })
+  }
+
+  handleBlogChange = (event) => {
+    event.preventDefault()
+    this.setState({ blog: { ...this.state.blog, [event.target.name]: event.target.value } })
   }
 
   handleSubmit = (event) => {
@@ -42,6 +51,21 @@ class Uploader extends Component {
       .catch(console.log)
   }
 
+  handleBlogSubmit = (event) => {
+    event.preventDefault()
+    console.log(this.props.user.token)
+    const formData = new FormData(event.target)
+    console.log(formData)
+    const config = {
+      headers: {
+        Authorization: `Bearer ${this.props.user.token}`
+      }
+    }
+    axios.post(`${apiUrl}/blog`, formData, config)
+      .then(() => this.setState({ created: true }))
+      .catch(console.log)
+  }
+
   render () {
     return (
       <Fragment>
@@ -51,7 +75,14 @@ class Uploader extends Component {
           <input name="image" type="file" onChange={this.handleFile} />
           <button type="submit">submit</button>
         </form>
-        <p>{this.state.created}</p>
+        <p style={{ color: 'white' }}>{this.state.created}</p>
+        <form onSubmit={this.handleBlogSubmit} id="blogForm">
+          <input name='title' type="text" onChange={this.handleBlogChange} placeholder="title" />
+          <input name='pubdate' type='date' onChange={this.handleBlogChange} />
+          <input name="body" type="text" onChange={this.handleBlogChange} />
+          <button type="submit">submit</button>
+        </form>
+        <p style={{ color: 'white' }}>{this.state.created}</p>
       </Fragment>
     )
   }

@@ -4,6 +4,7 @@ import axios from 'axios'
 import apiUrl from './apiConfig.js'
 import './index.scss'
 import { FacebookShareButton, FacebookIcon, TwitterIcon, TwitterShareButton, RedditIcon, RedditShareButton } from 'react-share'
+import LazyLoad from 'react-lazyload'
 
 class Comic extends Component {
   constructor () {
@@ -68,7 +69,9 @@ class Comic extends Component {
               <RedditShareButton className='social-button' url={'http://localhost:7165/#/comics/' + item._id}> <RedditIcon size={32} round /> </RedditShareButton>
             </div>
           </div>
-          <img className='comic-img' src={item.img} />
+          <LazyLoad >
+            <img className='comic-img' src={item.img} />
+          </LazyLoad>
           <div className='comic-date'>
             <p>{new Date(item.pubdate).toDateString()}</p>
           </div>
@@ -86,11 +89,12 @@ class Comic extends Component {
             <TwitterShareButton className='social-button comic-control-item' url={this.state.comics ? 'http://localhost:7165/#/comics/' + c._id : '#'}> <TwitterIcon size={32} round /> </TwitterShareButton>
             <RedditShareButton className='social-button comic-control-item' url={this.state.comics ? 'http://localhost:7165/#/comics/' + c._id : '#'}> <RedditIcon size={32} round /> </RedditShareButton>
           </div>
+          <div className='comic-date' >
+            {this.state.comics ? <p>{new Date(c.pubdate).toDateString()}</p> : <p></p>}
+          </div>
         </div>
         {this.state.comics ? <img className='comic-img' src={c.img} /> : <p>Loading..</p>}
-        <div className='comic-date' >
-          {this.state.comics ? <p>{new Date(c.pubdate).toDateString()}</p> : <p></p>}
-        </div>
+
       </Fragment>
     )
 
