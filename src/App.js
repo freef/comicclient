@@ -9,8 +9,12 @@ import Comic from './Comic.js'
 import Uploader from './Uploader.js'
 import Nav from './nav.js'
 import Rss from './rss.js'
+import HireMe from './HireMe.js'
+import Blog from './Blog.js'
+import SideBar from './SideBar.js'
 
 import Alert from 'react-bootstrap/Alert'
+import './index.scss'
 
 class App extends Component {
   constructor () {
@@ -53,6 +57,15 @@ class App extends Component {
             <Route exact path='/' component={Comic} />
             <Route exact path='/comics/:id' component={Comic} />
             <Route exact path='/feed' component={Rss} />
+            <Route exact path='/comics' component={Comic} />
+            <Route path='/' component={HireMe} />
+            <section className='text-content'>
+              <Route exact path='/' component={Blog} />
+              <Route exact path='/' component={SideBar} />
+              <Route exact path='/blog/:id' component={Blog} />
+              <Route exact path='/blog/' component={Blog} />
+              <Route path='/blog' component={SideBar} />
+            </section>
           </main>
         </React.Fragment>
       )

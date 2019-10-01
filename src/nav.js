@@ -1,24 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+// import apiUrl from './apiConfig.js'
 
 const Nav = () => {
-  const navStyle = {
-    margin: '0 auto',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'baseline',
-    justifyContent: 'space-around',
-    maxWidth: '80%',
-    padding: '2rem 0'
-  }
-
   return (
-    <nav style={navStyle} >
-      <h1><Link to={'/'} > TITLE </Link> </h1>
-      <h4><Link to={'/archive'}>About</Link></h4>
-      <h4><Link to={'/about'}>Comics</Link></h4>
-      <h4><Link to={'/twitter'}>Blog</Link></h4>
-      <h4><Link to={'/feed'}>RSS</Link></h4>
+    <nav className='main-nav' >
+      <Link to={'/'} ><img className='main-logo' src='/temp_logo.png' alt='Flopsy & Bupp' /> </Link>
+      <div className='main-nav-links' >
+        <h4><Link className='main-nav-item' to={'/about'}>About</Link></h4>
+        <h4><Link className='main-nav-item' to={'/comics'}>Archive</Link></h4>
+        <h4><Link className='main-nav-item' to={'/blog'}>Blog</Link></h4>
+        <h4><Link className='main-nav-item' to={'/feed'}>RSS</Link></h4>
+      </div>
     </nav>
   )
 }
