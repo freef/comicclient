@@ -60,12 +60,13 @@ body {
 
 .comic {
   background-color: #FFF;
-  margin: 0 auto;
   min-width: 80%;
+  // max-width:690px;
   padding: .5rem;
   border-radius: .25rem;
   display: flex;
   flex-direction: column;
+  // margin: 0 auto;
 }
 
 .comic-control {
@@ -80,6 +81,7 @@ body {
   text-decoration: none;
   border-radius: 0.5rem;
   font-weight: bold;
+  margin-top: 1rem;
 }
 
 .comic-control-item:hover {
@@ -96,9 +98,10 @@ body {
 
 .comic-img {
   width: 100%;
-  max-width:800px;
-  max-height: 992px;
+  // max-width: 675px;
+  max-height: 100vh;
   align-self: center;
+  object-fit: scale-down;
 }
 
 .comic-title {
@@ -116,11 +119,19 @@ body {
 }
 
 .comic-title-bar {
-  align-items: center;
+  align-items: baseline;
   display: flex;
   flex-flow: row;
   justify-content: space-between;
-  margin: .5rem;
+  margin: 1rem .5rem 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // min-width: 90vh;
+  margin: 0 auto;
 }
 
 .dead-link {
@@ -275,3 +286,9 @@ body {
   min-width:80%;
   justify-content: space-between;
 }
+
+// @media (min-width: 992px) {
+//   .comic {
+//     width: 690px;
+//   }
+// }
