@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import './Header.scss'
-
 const authenticatedOptions = (
   <React.Fragment>
     <Link to="/change-password">Change Password</Link>
@@ -27,9 +25,9 @@ const Header = ({ user }) => (
   <header className="main-header">
     <h1>Uber, But For Taxis</h1>
     <nav>
-      { user && <span>Welcome, {user.email}</span>}
-      { user ? authenticatedOptions : unauthenticatedOptions }
-      { alwaysOptions }
+      {user && <span>Welcome, {user.email}</span>}
+      {user ? authenticatedOptions : unauthenticatedOptions}
+      {alwaysOptions}
     </nav>
   </header>
 )
